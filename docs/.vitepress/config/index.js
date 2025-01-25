@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { defineConfig } from 'vitepress'
+import { getStoredLanguage } from '../utils/language'
 
 import zhCN, { search as zhCNSearch } from './zh-CN'
 import enUS, { search as enUSSearch } from './en-US'
@@ -50,6 +51,7 @@ function config () {
       root: zhCN,
       'en-US': enUS
     },
+    defaultLocale: getStoredLanguage(),
     themeConfig: {
       logo: '/images/logo.svg',
       search: {
